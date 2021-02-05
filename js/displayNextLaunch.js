@@ -1,5 +1,6 @@
 // function that is going to display the first future launch
 export default function displayNextLaunch(data) {
+  console.log("data", data);
   // choosing the element
   const nextLaunchContainer = document.querySelector(".next-launch");
   // put the time data in a variabel
@@ -8,7 +9,8 @@ export default function displayNextLaunch(data) {
     year = launchDate.getFullYear(),
     // Put the  date in a variabel
     // Put the month in a variabel
-    month = launchDate.getMonth() + 2;
+    month = launchDate.getMonth() + 1;
+  console.log("month", month);
   // Get the month name
   let options = { month: "long" };
   // Getting the day

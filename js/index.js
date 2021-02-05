@@ -2,10 +2,11 @@ import displayNextLaunch from "./displayNextLaunch.js";
 import updateEverySec from "./updateEverySec.js";
 // picking up the correct url
 let NEXT_LAUNCH = `https://api.spacexdata.com/v4/launches/next`;
+
 const ROCKETS_URL = `https://api.spacexdata.com/v4/rockets`;
 let rocketsArray = [];
 
-console.log(ROCKETS_URL);
+// console.log(ROCKETS_URL);
 
 // this variabel is going to be fill up later
 
@@ -17,7 +18,6 @@ async function getProducts() {
         let data = json;
         displayNextLaunch(data);
         updateEverySec(data);
-
     } catch (error) {
         console.log(error);
         // displayMessage("error", error, "container");
@@ -35,7 +35,6 @@ async function getRockets() {
         let data = json;
         rocketsArray = data;
         createRocketCards(rocketsArray);
-
     } catch (error) {
         console.log(error);
         // displayMessage("error", error, "container");
@@ -43,30 +42,41 @@ async function getRockets() {
 }
 getRockets();
 
-
 function createRocketCards(rockets) {
     const cardsContainer = document.querySelector(".cards");
 
-    for (let i = 0; i < rockets.length; i++) {
-        console.log(rockets[i].description);
+    rockets.forEach(rocket => {
 
-        if (!rockets[i].flickr_images) {
-            // continue will skip the remaining code and return to the top of the loop
-            continue;
+        let img = rocket.flickr_images[0];
+
+        // console.log(img.includes("imgur"));
+
+        if (img.includes("imgur")) {
+
+
+            img = "img/spacex-6.png"
         }
-        // add the new HTML string to the existing HTML string
-        cardsContainer.innerHTML += `
-        <div class="row">
-      <div class="col-sm-12  ">
-        <div class="card-body">
-        <img class="card-img-top" src="${rockets[i].flickr_images}" alt="Card image cap">
-         <h5 class="card-title">${rockets[i].name}</h5>
-         <p class="card-text">${rockets[i].description}</p>
-          <a href="#" class="btn btn-primary"> Details</a>
-          </div>
-      </div>
-    </div>
-  `;
-    }
-}
 
+
+        cardsContainer.innerHTML += `
+
+        <div class="col-12 col-md-3">
+        <div class="card h-100 ">
+        <img class="card-img-top" src="${img}" alt="Card image cap">
+            <div class="card-body" >
+                <h3 class="card-title">${rocket.name}</h3>
+                <p class="card-text">${rocket.description}</p>
+                <a href="#" class="btn btn-primary"> Details</a>
+            </div>
+        </div>
+    </div>
+
+
+
+      
+      `;
+
+    });
+
+
+}
