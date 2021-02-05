@@ -56,8 +56,8 @@ function createRocketCards(rockets) {
         }
         // add the new HTML string to the existing HTML string
         cardsContainer.innerHTML += `
-        <div class="row ">
-      <div class="col-sm-10 col-md-4">
+        <div class="row">
+      <div class="col-sm-12  ">
         <div class="card-body">
         <img class="card-img-top" src="${rockets[i].flickr_images}" alt="Card image cap">
          <h5 class="card-title">${rockets[i].name}</h5>
