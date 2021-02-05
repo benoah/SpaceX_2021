@@ -50,30 +50,24 @@ function createRocketCards(rockets) {
     for (let i = 0; i < rockets.length; i++) {
         console.log(rockets[i].description);
 
+        if (rockets[i].flickr_images) {
+            // continue will skip the remaining code and return to the top of the loop
+            continue;
+        }
         // add the new HTML string to the existing HTML string
         cardsContainer.innerHTML += `
-        <div class="card mb-3" style="max-width: 540px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              src="${rockets[i].flickr_images}"
-              alt="..."
-              class="img-fluid"
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">${rockets[i].name}</h5>
-              <p class="card-text">
-              ${rockets[i].description}
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-3">
+        <div class="card product">
+        <img class="card-img-top card-img-top embed-responsive embed-responsive-4by3" src="${rockets[i].flickr_images}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">${rockets[i].name}</h5>
+            <p class="card-text">${rockets[i].description}</p>
+            <a href="#" class="btn btn-primary"> Details</a>
           </div>
         </div>
-      </div> `;
+      </div>
+    </div>`;
     }
 }
 

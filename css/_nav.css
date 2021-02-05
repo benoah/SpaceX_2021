@@ -25,6 +25,7 @@ header .logo a {
   letter-spacing: 0.393rem;
   text-decoration: none;
   transition: all 1s ease-in-out;
+  font-size: 32px;
 }
 
 header .hamburger {
@@ -194,11 +195,11 @@ header .menu ul a {
   }
   header .menudesktop ul a {
     text-decoration: none;
-    color: #806c48;
+    color: #fc0;
     font-weight: 700;
 
     padding-bottom: 0.313rem;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
   }
 
