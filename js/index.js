@@ -3,7 +3,7 @@ import updateEverySec from "./updateEverySec.js";
 // picking up the correct url
 let NEXT_LAUNCH = `https://api.spacexdata.com/v4/launches/next`;
 
-const ROCKETS_URL = `https://api.spacexdata.com/v4/rockets`;
+export const ROCKETS_URL = `https://api.spacexdata.com/v4/rockets`;
 let rocketsArray = [];
 
 // console.log(ROCKETS_URL);
@@ -42,41 +42,31 @@ async function getRockets() {
 }
 getRockets();
 
+
 function createRocketCards(rockets) {
     const cardsContainer = document.querySelector(".cards");
-
     rockets.forEach(rocket => {
 
         let img = rocket.flickr_images[0];
-
-        // console.log(img.includes("imgur"));
-
         if (img.includes("imgur")) {
-
-
             img = "img/spacex-6.png"
         }
-
-
         cardsContainer.innerHTML += `
-
         <div class="col-12 col-md-3">
-        <div class="card h-100 ">
-        <img class="card-img-top" src="${img}" alt="Card image cap">
+        <div class=" card h-100 ">
+        <img class="card-img-top " src="${img}" alt="Card image cap">
             <div class="card-body" >
                 <h3 class="card-title">${rocket.name}</h3>
                 <p class="card-text">${rocket.description}</p>
-                <a href="#" class="btn btn-primary"> Details</a>
-            </div>
+                <a class="btn btn-primary" href="detail.html?id=${rocket.id}" > Details</a>
+                </div>
         </div>
-    </div>
-
-
-
-      
-      `;
-
+    </div> `;
     });
-
-
 }
+
+
+
+
+
+

@@ -30,3 +30,8 @@ body {
   background-size: cover;
   background-image: url(../img/altinay-dinc-LluELtL5mK4-unsplash.jpg);
 }
+
+.detail-container {
+  color: white;
+  margin-top: 80px;
+}
