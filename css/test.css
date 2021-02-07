@@ -1,0 +1,15 @@
+.first-slide {
+  width: 500px;
+  height: 500px;
+}
+.second-slide {
+  width: 500px;
+  height: 500px;
+}
+.third-slide {
+  width: 500px;
+  height: 500px;
+}
+body {
+  background: green;
+}
