@@ -1,4 +1,12 @@
-.form-group label {
+.form-group {
+  margin-top: 8px;
+  margin-bottom: 8px;
   color: #f1f1f1;
-  font-weight: 700;
+}
+
+.form-control {
+  color: #f1f1f1;
+  background-color: transparent;
+  background-clip: padding-box;
+  border: 1px solid #de6600;
 }
