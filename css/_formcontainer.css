@@ -28,3 +28,33 @@
   color: #de6600 !important;
   margin-top: 8px;
 }
+.success-message {
+  display: none;
+}
+.success-message h2 {
+  color: #de6600;
+}
+.success-message p {
+  color: #fc0;
+}
+.contact-form span {
+  color: #de6600;
+}
+
+/*
+f
+
+
+form .error-name,
+form .error-email,
+form .error-invalid-email {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+form .error-name-message {
+  -webkit-transform: translateY(10px);
+  transform: translateY(10px);
+}
+
+*/

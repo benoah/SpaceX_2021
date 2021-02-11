@@ -37,3 +37,11 @@ body {
   color: white;
   margin-top: 80px;
 }
+
+.accordion {
+  color: white;
+}
+
+.list-group-item {
+  color: #de6600;
+}
