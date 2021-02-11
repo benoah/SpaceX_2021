@@ -1,6 +1,7 @@
 import displayNextLaunch from "./displayNextLaunch.js";
 import updateEverySec from "./updateEverySec.js";
 import createRocketCards from "./createRocketCards.js";
+
 // picking up the correct url
 let NEXT_LAUNCH = `https://api.spacexdata.com/v4/launches/next`;
 
