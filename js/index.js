@@ -66,21 +66,21 @@ function createCompanyList(information) {
     lisContainer.innerHTML += `
     <div id="accordionExample" class="accordion shadow">
     <!-- Accordion item 1 -->
-    <div class="card">
+
         <div id="headingOne" class="card-header bg-white shadow-sm border-0">
             <h2 class="mb-0">
                 <button type="button" data-toggle="collapse" data-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne"
                     class="btn btn-link text-dark font-weight-bold text-uppercase collapsible-link">headquarters</button>
             </h2>
-        </div>
+     
         <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample"
             class="collapse show">
             <div class="card-body">
             <ul class="list-group">
-            <li class="list-group-item">Address: ${information.headquarters.address}</li>
-            <li class="list-group-item">City: ${information.headquarters.city}</li>
-            <li class="list-group-item">State:${information.headquarters.state}</li>
+            Address: ${information.headquarters.address}
+            City: ${information.headquarters.city}
+           State:${information.headquarters.state}
           </ul>
             </div>
         </div>
